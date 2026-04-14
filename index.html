@@ -25,14 +25,16 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            min-height: 100dvh;
             overflow: hidden;
             font-family: 'Cormorant Garamond', serif;
         }
 
         .scene {
             position: relative;
-            width: 420px;
-            height: 780px;
+            width: min(420px, 100vw);
+            height: min(780px, 100vh);
+            height: min(780px, 100dvh);
             perspective: 1200px;
         }
 
@@ -519,6 +521,67 @@
         .replay-btn:hover {
             background: var(--maroon-deep);
             box-shadow: 0 4px 20px rgba(139,58,74,0.4);
+        }
+
+        /* ── Mobile responsive ── */
+        @media (max-height: 700px) {
+            .outer-card, .inner-card {
+                padding: 24px 20px;
+            }
+            .outer-top-text { margin-bottom: 16px; }
+            .outer-sub-text { margin-bottom: 20px; }
+            .cutout-circle { width: 130px; height: 130px; }
+            .cutout-name1 { font-size: 18px; }
+            .outer-date { margin-top: 16px; }
+            .filigree-bottom { height: 40px; }
+            .outer-celebrate { font-size: 44px; }
+
+            .inner-heading { font-size: 12px; margin-bottom: 4px; }
+            .invite-text { font-size: 12px; margin-top: 10px; }
+            .bride-name { font-size: 24px; margin-top: 10px; }
+            .with-text { margin: 2px 0; }
+            .divider-filigree { margin-top: 6px; height: 20px; }
+            .event-details { margin-top: 6px; gap: 12px; }
+            .detail-block .date-big { font-size: 28px; }
+            .venue-name { font-size: 11px; }
+            .venue-cta { margin-top: 8px; }
+            .join-text { margin-top: 16px; font-size: 15px; }
+            .rings-icon svg { width: 70px; height: 40px; }
+            .rings-icon { margin-bottom: 6px; }
+        }
+
+        @media (max-height: 600px) {
+            .outer-card, .inner-card {
+                padding: 16px 16px;
+            }
+            .outer-top-text { margin-bottom: 10px; font-size: 11px; }
+            .outer-sub-text { margin-bottom: 12px; }
+            .cutout-circle { width: 110px; height: 110px; }
+            .cutout-name1 { font-size: 16px; }
+            .outer-date { margin-top: 10px; font-size: 12px; }
+            .filigree-bottom { height: 30px; }
+            .outer-celebrate { font-size: 36px; }
+
+            .rings-icon svg { width: 56px; height: 32px; }
+            .rings-icon { margin-bottom: 4px; }
+            .inner-heading { font-size: 10px; }
+            .invite-text { font-size: 11px; margin-top: 6px; }
+            .bride-name { font-size: 20px; margin-top: 6px; }
+            .divider-filigree { margin-top: 4px; height: 16px; }
+            .event-details { margin-top: 4px; gap: 8px; }
+            .detail-block .date-big { font-size: 24px; }
+            .detail-block .day { font-size: 9px; }
+            .venue-name { font-size: 10px; }
+            .time-text { font-size: 12px; }
+            .venue-cta { margin-top: 6px; font-size: 7px; padding: 3px 8px; }
+            .join-text { margin-top: 10px; font-size: 13px; }
+        }
+
+        @media (max-width: 420px) {
+            .outer-card, .inner-card {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
         }
     </style>
 </head>
